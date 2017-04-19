@@ -1,4 +1,7 @@
-# api documentation for  [ref (v1.3.4)](https://github.com/TooTallNate/ref#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-ref.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ref) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ref.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ref)
+# npmdoc-ref
+
+#### api documentation for  [ref (v1.3.4)](https://github.com/TooTallNate/ref#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-ref.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ref) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ref.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ref)
+
 #### Turn Buffer instances into "pointers"
 
 [![NPM](https://nodei.co/npm/ref.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ref)
