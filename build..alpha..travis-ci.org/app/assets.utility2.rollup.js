@@ -14145,14 +14145,6 @@ instruction\n\
                     setImmediate: local.nop,
                     setInterval: local.nop,
                     setTimeout: local.nop
-                }],
-                [ process, {
-                    abort: local.nop,
-                    disconnect: local.nop,
-                    exit: local.nop,
-                    kill: local.nop,
-                    nextTick: local.nop,
-                    on: local.nop
                 }]
             ];
             [
@@ -14162,31 +14154,16 @@ instruction\n\
                 [local, 'http'],
                 [local, 'https'],
                 [local, 'net'],
-                [local, 'repl']
-                //!! [local.global, 'process'],
-                //!! [process, 'stdin']
+                [local, 'repl'],
+                [local.global, 'process'],
+                [process, 'stdin']
             ].forEach(function (element) {
                 tmp = element[0][element[1]];
                 mockDict = {};
                 Object.keys(tmp).forEach(function (key) {
                     if (typeof tmp[key] === 'function' && !(
-                            /^(?:fs\.Read|fs\.read|process\.binding)/
+                            /^(?:fs\.Read|fs\.read|process\.binding|process\.dlopen)/
                         ).test(element[1] + '.' + key)) {
-                        mockDict[key] = function () {
-                            return;
-                        };
-                        // coverage-hack
-                        mockDict[key]();
-                    }
-                });
-                mockList.push([ module, mockDict ]);
-            });
-            [
-                process
-            ].forEach(function (module) {
-                mockDict = {};
-                Object.keys(module).forEach(function (key) {
-                    if (typeof module[key] === 'function' && key !== 'binding') {
                         mockDict[key] = function () {
                             return;
                         };
