@@ -14145,6 +14145,14 @@ instruction\n\
                     setImmediate: local.nop,
                     setInterval: local.nop,
                     setTimeout: local.nop
+                }],
+                [ process, {
+                    abort: local.nop,
+                    disconnect: local.nop,
+                    exit: local.nop,
+                    kill: local.nop,
+                    nextTick: local.nop,
+                    on: local.nop
                 }]
             ];
             [
@@ -14154,9 +14162,9 @@ instruction\n\
                 [local, 'http'],
                 [local, 'https'],
                 [local, 'net'],
-                [local, 'repl'],
-                [local.global, 'process'],
-                [process, 'stdin']
+                [local, 'repl']
+                //!! [local.global, 'process'],
+                //!! [process, 'stdin']
             ].forEach(function (element) {
                 tmp = element[0][element[1]];
                 mockDict = {};
